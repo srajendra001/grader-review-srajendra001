@@ -1,5 +1,5 @@
 # set -e
-CPATH='.;../../lib/hamcrest-core-1.3.jar;../../lib/junit-4.13.2.jar'
+CPATH='.:../../lib/hamcrest-core-1.3.jar:../../lib/junit-4.13.2.jar'
 
 rm -rf student-submission
 rm -rf grading-area
@@ -42,7 +42,7 @@ else
     failures=`echo $scores | awk '{print $2}'`
     final=$(($tests-$failures))
     finalGrade=$(($final/$tests))
-    echo "Final grade is " $finalGrade 
+    echo "Final grade is " $final "/" $tests
 fi
 
 # Draw a picture/take notes on the directory structure that's set up after
